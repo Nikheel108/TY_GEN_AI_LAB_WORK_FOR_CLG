@@ -1,0 +1,32 @@
+{
+  "project": "CAMP - Calibration-Aware ML-Predictive Scheduling",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "gpu": "Tesla T4",
+  "gpu_memory_gib": 14.56,
+  "selected_predictor": "Random Forest",
+  "predictor_features": [
+    "prompt_tokens",
+    "max_output_tokens",
+    "arrival_rate_5s_rps",
+    "queue_depth_at_admission",
+    "active_requests_at_admission",
+    "concurrency_limit",
+    "gpu_utilization_pct",
+    "gpu_memory_used_mib"
+  ],
+  "calibration_residual_margin_s": 0.2788645865319155,
+  "pilot_engine_latency_slo_s": 1.587797846700073,
+  "fixed_k": 2,
+  "adaptive_concurrency": [
+    1,
+    4
+  ],
+  "aging_tau_s": 5.0,
+  "max_wait_priority_s": 15.0,
+  "benchmark_requests_per_workload": {
+    "bursty": 12,
+    "mixed": 12,
+    "steady": 12
+  },
+  "warning": "Small pilot benchmark only; repeat with larger independent traces before making research claims."
+}

@@ -1,0 +1,41 @@
+{
+  "project": "CAMP - Calibration-Aware ML-Predictive Scheduling",
+  "target": "engine_latency_s",
+  "target_definition": "completion_time - admission_time as recorded by Notebook 01; client-observed engine interval, not pure GPU compute time",
+  "features": [
+    "prompt_tokens",
+    "max_output_tokens",
+    "arrival_rate_5s_rps",
+    "queue_depth_at_admission",
+    "active_requests_at_admission",
+    "concurrency_limit",
+    "gpu_utilization_pct",
+    "gpu_memory_used_mib"
+  ],
+  "selected_model": "Random Forest",
+  "selected_model_file": "camp_latency_predictor.joblib",
+  "calibration_method": "one-sided empirical 90th-percentile residual margin on run-held-out calibration partition",
+  "calibration_residual_margin_s": 0.2788645865319155,
+  "calibration_quantile_level": 0.925,
+  "calibration_rows": 40,
+  "test_coverage": 0.95,
+  "train_run_ids": [
+    "bursty_run_1",
+    "bursty_run_3",
+    "mixed_run_1",
+    "mixed_run_3",
+    "steady_run_3"
+  ],
+  "calibration_run_ids": [
+    "mixed_run_2",
+    "steady_run_1"
+  ],
+  "test_run_ids": [
+    "bursty_run_2",
+    "steady_run_2"
+  ],
+  "seed": 42,
+  "scikit_learn_version": "1.9.1",
+  "xgboost_version": "3.4.1",
+  "warning": "Pilot results only. Residual calibration is empirical, not a formal guarantee; validate on more independent workload runs and under distribution shift."
+}
