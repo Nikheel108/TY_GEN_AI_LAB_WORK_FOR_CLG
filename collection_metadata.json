@@ -1,0 +1,24 @@
+{
+  "project": "CAMP - Calibration-Aware ML-Predictive Scheduling",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "gpu_name": "Tesla T4",
+  "gpu_memory_gib": 14.56,
+  "python_version": "3.13.16",
+  "torch_version": "2.14.0+cu130",
+  "vllm_version": "0.34.0",
+  "seed": 42,
+  "requests_per_run": 20,
+  "repeats_per_workload": 3,
+  "concurrency_levels": [
+    1,
+    2,
+    4
+  ],
+  "workloads": [
+    "steady",
+    "mixed",
+    "bursty"
+  ],
+  "latency_target": "engine_latency_s = completion_time - admission_time",
+  "notes": "Pilot dataset. Record actual vLLM version and environment in the final experiment log."
+}
