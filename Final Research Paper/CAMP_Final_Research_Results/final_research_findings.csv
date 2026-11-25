@@ -1,0 +1,5 @@
+Research_Metric,Value
+CAMP average waiting-time improvement,13.202071763970743
+CAMP average latency improvement,8.332916721957936
+Fair-CAMP P95 waiting-time improvement,47.269809702863846
+Completed requests,36.0
